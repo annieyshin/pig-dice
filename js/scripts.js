@@ -15,8 +15,33 @@ function Player(turn) {
   this.playerName;
 }
 
+Player.prototype.AIPlay = function() {
+  var h = 5
+  for (i = 0; i < 2; i++) {
+    this.roll = rollDice();
+    this.checkRoll();
+    if (this.turnscore > 12) {
+      this.hold();
+      ;break
+    } else if (i === 2) {
+      this.hold();
+      ;break
+    }
+  }
+}
+
 Player.prototype.checkRoll = function() {
   if ( this.roll === 1) {
+    this.tempscore = 0;
+    $("#playerTurn").text("Next Player's Turn! You rolled a 1.")
+  } else {
+    this.tempscore += this.roll
+  }
+}
+
+Player.prototype.compCheckRoll = function() {
+  if ( this.roll === 1) {
+    computerPlayer.AIPlay();
     this.tempscore = 0;
     $("#playerTurn").text("Next Player's Turn! You rolled a 1.")
   } else {
@@ -31,7 +56,7 @@ Player.prototype.hold = function() {
 
 Player.prototype.winner = function() {
   if(this.total >= 100) {
-  alert(this.playerName + " are the winner!!!")
+  alert(this.playerName + " is the winner!!!")
   }
 }
 
@@ -93,7 +118,7 @@ $(document).ready(function(){
     $("#compVSplayerTurn").text("")
     $("#compVSdiceNumber span").text("")
     $("#compVSdiceNumber span").text(compVSplayer1.roll)
-    compVSplayer1.checkRoll();
+    compVSplayer1.compCheckRoll();
     $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
   });
 
@@ -103,6 +128,13 @@ $(document).ready(function(){
     $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
     compVSplayer1.winner();
     $("#compVSplayerTurn").text(computerPlayer.playerName + "'s Turn!")
+    computerPlayer.AIPlay();
+    console.log(computerPlayer);
+    $("#computerplayer2RoundScore").text(" " + computerPlayer.tempscore)
+    computerPlayer.hold();
+    computerPlayer.winner();
+    $("#computerPlayer2Total").text(" " + computerPlayer.total)
+    $("#compVSplayerTurn").text(compVSplayer1.playerName + "'s Turn!")
   });
 
 // Player One Roll and Hold Buttons
