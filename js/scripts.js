@@ -41,12 +41,14 @@ $(document).ready(function(){
    event.preventDefault();
    $("#compVSplayerNamesID").show();
    $("#playerNamesID").hide();
+   $("#twoPlayerOptionOpeningID").hide();
  });
 
  $("#playerVSplayerStartID").click(function(e) {
    e.preventDefault();
    $("#playerNamesID").show();
    $("#compVSplayerNamesID").hide();
+   $("#twoPlayerOptionOpeningID").hide();
  });
 
  // Computer vs One Player Name Input Screen
@@ -85,6 +87,24 @@ $(document).ready(function(){
    player2.playerName = player2Name
  });
 
+// Computer vs Player One Roll and Hold Buttons
+  $("#compVSplayerOneRollBTNID").click(function(){
+    compVSplayer1.roll = rollDice();
+    $("#compVSplayerTurn").text("")
+    $("#compVSdiceNumber span").text("")
+    $("#compVSdiceNumber span").text(compVSplayer1.roll)
+    compVSplayer1.checkRoll();
+    $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
+  });
+
+  $("#compVSplayerOneHoldBTNID").click(function(){
+    compVSplayer1.hold();
+    $("#compVSplayer1Total").text(" " + compVSplayer1.total)
+    $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
+    compVSplayer1.winner();
+    $("#compVSplayerTurn").text(computerPlayer.playerName + "'s Turn!")
+  });
+
 // Player One Roll and Hold Buttons
   $("#playerOneRollBTNID").click(function(){
     player1.roll = rollDice();
@@ -102,6 +122,7 @@ $(document).ready(function(){
     player1.winner();
     $("#playerTurn").text(player2.playerName + "'s Turn!")
   });
+
 // Player Two Roll and Hold Buttons
   $("#playerTwoRollBTNID").click(function(){
     player2.roll = rollDice();

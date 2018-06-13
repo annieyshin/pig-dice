@@ -14,20 +14,22 @@
     </div>
     <div class="container">
       <!-- START Screen Opening Screen -->
-      <div class="row">
-        <div class="col-md-6">
-          <div id="computerPlayerWrapperID">
-            <!-- Player vs. Computer -->
-            <button id="onePlayerVSCompStartID" class="btn btn-warning">One Player Option</button>
+      <div id="twoPlayerOptionOpeningID">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="computerPlayerWrapperID">
+              <!-- Player vs. Computer -->
+              <button id="onePlayerVSCompStartID" class="btn btn-warning">One Player Option</button>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div id="twoPlayerWrapperID">
-              <!-- Player vs. Player -->
-              <button id="playerVSplayerStartID" class="btn btn-warning">Two Player Option</button>
+          <div class="col-md-6">
+            <div id="twoPlayerWrapperID">
+                <!-- Player vs. Player -->
+                <button id="playerVSplayerStartID" class="btn btn-warning">Two Player Option</button>
+            </div>
           </div>
-        </div>
-      </div> <!-- Computer Player row DIV ending -->
+        </div> <!-- Computer Player row DIV ending -->
+      </div>
 
       <!-- One Player Name Form Option -->
       <div id="compVSplayerNamesID">
@@ -59,16 +61,16 @@
       <p id="compVSplayerOneTotalID">
         <span id=compVSplayer1Name></span>
         Total Score:
-        <span id="player1Total"></span>
+        <span id="compVSplayer1Total"></span>
       </p>
-      <button id="playerOneRollBTNID" class="btn btn-info">Roll!</button>
-      <button id="playerOneHoldBTNID" class="btn btn-danger">Hold!</button>
+      <button id="compVSplayerOneRollBTNID" class="btn btn-info">Roll!</button>
+      <button id="compVSplayerOneHoldBTNID" class="btn btn-danger">Hold!</button>
       <h4>Round Score:</h4>
-      <h4><span id="player1RoundScore"></span></h4>
+      <h4><span id="compVSplayer1RoundScore"></span></h4>
     </div>
     <div class="col-md-2">
       <img id="dice" src="img/dice.png" alt="dice">
-      <div id="diceNumber">
+      <div id="compVSdiceNumber">
         <h3><span></span></h3>
       </div>
     </div>
@@ -77,10 +79,10 @@
       <button class="btn btn-info">Roll!</button>
       <button class="btn btn-danger">Hold!</button>
       <h4>Round Score:</h4>
-      <h4><span id="player2RoundScore"></span></h4>
+      <h4><span id="computerplayer2RoundScore"></span></h4>
     </div>
-  </div>   <!-- gameBoardID DIV ending -->
-  <div id="playerTurn">
+  </div>   <!-- compVSBoard DIV ending -->
+  <div id="compVSplayerTurn">
     <h3></h3>
   </div>
 
@@ -101,12 +103,14 @@
           <h4>Round Score:</h4>
           <h4><span id="player1RoundScore"></span></h4>
         </div>
+
         <div class="col-md-2">
           <img id="dice" src="img/dice.png" alt="dice">
           <div id="diceNumber">
             <h3><span></span></h3>
           </div>
         </div>
+
         <div class="col-md-5">
           <p id="playerTwoTotalID"><span id=player2Name></span> Total Score:<span id="player2Total"></span></p>
           <button id="playerTwoRollBTNID" class="btn btn-info">Roll!</button>
@@ -114,7 +118,9 @@
           <h4>Round Score:</h4>
           <h4><span id="player2RoundScore"></span></h4>
         </div>
-      </div>   <!-- gameBoardID DIV ending -->
+
+      </div>   <!-- row DIV ending -->
+
       <div id="playerTurn">
         <h3></h3>
       </div>
