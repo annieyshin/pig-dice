@@ -53,6 +53,7 @@ $(document).ready(function(){
 // Player One Roll and Hold Buttons
   $("#playerOneRollBTNID").click(function(){
     player1.roll = rollDice();
+    $("#playerTurn").text("")
     $("#diceNumber span").text("")
     $("#diceNumber span").text(player1.roll)
     player1.checkRoll();
@@ -69,6 +70,7 @@ $(document).ready(function(){
 // Player Two Roll and Hold Buttons
   $("#playerTwoRollBTNID").click(function(){
     player2.roll = rollDice();
+    $("#playerTurn").text("")
     $("#diceNumber span").text("")
     $("#diceNumber span").text(player2.roll)
     player2.checkRoll();

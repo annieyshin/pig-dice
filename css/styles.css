@@ -40,6 +40,13 @@
   font-weight: bold;
 }
 
+#playerTurn {
+  margin-top: 15px;
+  text-align: center;
+  font-family: fantasy;
+  font-size: 24pt;
+}
+
 /*.row {
   width: 100%;
 }*/
