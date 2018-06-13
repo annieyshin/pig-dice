@@ -1,5 +1,7 @@
 var player1="";
 var player2="";
+var compVSplayer1="";
+var computerPlayer="";
 
 var rollDice = function() {
   return Math.floor(Math.random() * (6 - 1) + 1)
@@ -33,7 +35,40 @@ Player.prototype.winner = function() {
   }
 }
 
+// Start Screen One Player or Two Player Buttons
 $(document).ready(function(){
+ $("#onePlayerVSCompStartID").click(function(event) {
+   event.preventDefault();
+   $("#compVSplayerNamesID").show();
+   $("#playerNamesID").hide();
+ });
+
+ $("#playerVSplayerStartID").click(function(e) {
+   e.preventDefault();
+   $("#playerNamesID").show();
+   $("#compVSplayerNamesID").hide();
+ });
+
+ // Computer vs One Player Name Input Screen
+  $("#compVSplayerNameStartID").click(function(event){
+    event.preventDefault();
+    compVSplayer1 = new Player()
+    computerPlayer = new Player()
+    $("#twoPlayerWrapperID").hide();
+    $("#onePlayerVSCompStartID").hide();
+    $("#compVSplayerNamesID").hide();
+    $("#compVsgameBoardID").show();
+
+    var compVSplayer1Name = $("#compVSplayerOneID").val();
+    $("#compVSplayer1Name").text(compVSplayer1Name + "'s")
+    compVSplayer1.playerName = compVSplayer1Name;
+    var computerPlayerName = "Computer Player";
+    computerPlayer.playerName = computerPlayerName;
+    $("#computerPlayerName").text(computerPlayerName + "'s")
+
+  });
+
+// Two Players Name Input Screen
  $("#gameStartID").click(function(e){
    e.preventDefault();
    player1 = new Player()

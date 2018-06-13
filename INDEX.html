@@ -13,6 +13,32 @@
       Pig Dice Game!
     </div>
     <div class="container">
+      <!-- START Screen Opening Screen -->
+      <div class="row">
+        <div class="col-md-6">
+          <div id="computerPlayerWrapperID">
+            <!-- Player vs. Computer -->
+            <button id="onePlayerVSCompStartID" class="btn btn-warning">One Player Option</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="twoPlayerWrapperID">
+              <!-- Player vs. Player -->
+              <button id="playerVSplayerStartID" class="btn btn-warning">Two Player Option</button>
+          </div>
+        </div>
+      </div> <!-- Computer Player row DIV ending -->
+
+      <!-- One Player Name Form Option -->
+      <div id="compVSplayerNamesID">
+        <div class="form-group">
+          <label for="compVSplayerOne">Player One:</label>
+          <input for="compVSplayerOne" id="compVSplayerOneID" class="form-control">
+        </div>
+        <button id="compVSplayerNameStartID" class="btn btn-info">Start</button>
+      </div>   <!-- playerNamesID DIV ending -->
+
+      <!-- Two Player Name Form Option -->
       <div id="playerNamesID">
         <div class="form-group">
           <label for="playerOne">Player One:</label>
@@ -22,7 +48,47 @@
         </div>
         <button id="gameStartID" class="btn btn-info">Start</button>
       </div>   <!-- playerNamesID DIV ending -->
-      <div class="container"  id="gameBoardID">
+    </div> <!-- container DIV ending -->
+
+<!-- Computer Vs Player One Game Form  -->
+
+
+<div class="container"  id="compVsgameBoardID">
+  <div class="row">
+    <div class="col-md-5">
+      <p id="compVSplayerOneTotalID">
+        <span id=compVSplayer1Name></span>
+        Total Score:
+        <span id="player1Total"></span>
+      </p>
+      <button id="playerOneRollBTNID" class="btn btn-info">Roll!</button>
+      <button id="playerOneHoldBTNID" class="btn btn-danger">Hold!</button>
+      <h4>Round Score:</h4>
+      <h4><span id="player1RoundScore"></span></h4>
+    </div>
+    <div class="col-md-2">
+      <img id="dice" src="img/dice.png" alt="dice">
+      <div id="diceNumber">
+        <h3><span></span></h3>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <p id="computerPlayerTotalID"><span id=computerPlayerName></span> Total Score:<span id="computerPlayer2Total"></span></p>
+      <button class="btn btn-info">Roll!</button>
+      <button class="btn btn-danger">Hold!</button>
+      <h4>Round Score:</h4>
+      <h4><span id="player2RoundScore"></span></h4>
+    </div>
+  </div>   <!-- gameBoardID DIV ending -->
+  <div id="playerTurn">
+    <h3></h3>
+  </div>
+
+
+</div>   <!-- Container 2 DIV ending -->
+
+<!-- Two Player Game Board  -->
+    <div class="container"  id="gameBoardID">
       <div class="row">
         <div class="col-md-5">
           <p id="playerOneTotalID">
@@ -53,7 +119,6 @@
         <h3></h3>
       </div>
     </div>   <!-- Container 2 DIV ending -->
-  </div>  <!-- Container 1 DIV ending -->
 
   </body>
 </html>

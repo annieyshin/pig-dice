@@ -47,14 +47,12 @@
   font-size: 24pt;
 }
 
-/*.row {
-  width: 100%;
-}*/
-
-/*#playerOneTotalID {
-  width: 100%;
+#playerNamesID, #compVSplayerNamesID, #compVsgameBoardID {
+  display: none;
 }
 
-#playerTwoTotalID {
+.btn-warning {
   width: 100%;
-}*/
+  font-size: 20pt;
+  font-weight: bold;
+}
