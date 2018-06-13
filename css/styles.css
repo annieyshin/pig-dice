@@ -1,0 +1,25 @@
+#gameBoardID {
+  display:none;
+}
+
+.col-md-6 {
+  background-color: beige;
+  font-size: 16pt;
+  font-family: sans-serif;
+  color: blue;
+  border: 6px solid white;
+  text-align: center;
+  width: 100%;
+}
+
+/*.row {
+  width: 100%;
+}*/
+
+/*#playerOneTotalID {
+  width: 100%;
+}
+
+#playerTwoTotalID {
+  width: 100%;
+}*/
