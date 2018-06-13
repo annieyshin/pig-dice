@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h1>Pig Dice Game!</h1>
+      Pig Dice Game!
     </div>
     <div class="container">
       <div id="playerNamesID">
@@ -25,7 +25,7 @@
       <div>
       <div class="container"  id="gameBoardID">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <p id="playerOneTotalID">
             <span id=player1Name></span>
             Total Score:
@@ -33,15 +33,24 @@
           </p>
           <button id="playerOneRollBTNID" class="btn btn-info">Roll!</button>
           <button id="playerOneHoldBTNID" class="btn btn-danger">Hold!</button>
-          <p>Round Score:
-            <span id="player1RoundScore"></span>
-          </p>
+          <h4>Round Score:</h4>
+          <h4><span id="player1RoundScore"></span></h4>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-2">
+          <img id="dice" src="img/dice.png" alt="dice">
+          <div id="diceNumber">
+            <h3><span></span></h3>
+          </div>
+        </div>
+        <div class="col-md-5">
           <p id="playerTwoTotalID"><span id=player2Name></span> Total Score:<span id="player2Total"></span></p>
           <button id="playerTwoRollBTNID" class="btn btn-info">Roll!</button>
           <button id="playerTwoHoldBTNID" class="btn btn-danger">Hold!</button>
-          <p>Round Score:<span id="player2RoundScore"></span></p>
+          <h4>Round Score:</h4>
+          <h4><span id="player2RoundScore"></span></h4>
+        </div>
+        <div id="playerTurn">
+          <h3></h3>
         </div>
       </div>   <!-- gameBoardID DIV ending -->
     </div>   <!-- Container DIV ending -->

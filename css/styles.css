@@ -1,8 +1,25 @@
+.jumbotron {
+  text-align: center;
+  background-image: url(../img/banner.jpg);
+  background-size: contain;
+  font-size: 62pt;
+  color: pink;
+  text-shadow: -1px 0 black, 0 4px black, 3px 0 purple, 0 -1px black;
+}
+
 #gameBoardID {
   display:none;
 }
 
-.col-md-6 {
+#gameBoardID p {
+  margin-top: 15px;
+}
+
+#gameBoardID h4 {
+  margin-top: 10px;
+}
+
+.col-md-5 {
   background-color: beige;
   font-size: 16pt;
   font-family: sans-serif;
@@ -10,6 +27,17 @@
   border: 6px solid white;
   text-align: center;
   width: 100%;
+}
+
+#dice {
+  margin-top: 15px;
+  max-width: 75%;
+}
+
+#diceNumber {
+  text-align: center;
+  margin: 20px auto 0 auto;
+  font-weight: bold;
 }
 
 /*.row {

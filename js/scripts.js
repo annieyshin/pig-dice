@@ -16,6 +16,7 @@ function Player(turn) {
 Player.prototype.checkRoll = function() {
   if ( this.roll === 1) {
     this.tempscore = 0;
+    $("#playerTurn").text("Next Player's Turn! You rolled a 1.")
   } else {
     this.tempscore += this.roll
   }
@@ -52,7 +53,8 @@ $(document).ready(function(){
 // Player One Roll and Hold Buttons
   $("#playerOneRollBTNID").click(function(){
     player1.roll = rollDice();
-    console.log(player1.roll);
+    $("#diceNumber span").text("")
+    $("#diceNumber span").text(player1.roll)
     player1.checkRoll();
     $("#player1RoundScore").text(" " + player1.tempscore)
   });
@@ -62,10 +64,13 @@ $(document).ready(function(){
     $("#player1Total").text(" " + player1.total)
     $("#player1RoundScore").text(" " + player1.tempscore)
     player1.winner();
+    $("#playerTurn").text(player2.playerName + "'s Turn!")
   });
 // Player Two Roll and Hold Buttons
   $("#playerTwoRollBTNID").click(function(){
     player2.roll = rollDice();
+    $("#diceNumber span").text("")
+    $("#diceNumber span").text(player2.roll)
     player2.checkRoll();
     $("#player2RoundScore").text(" " + player2.tempscore)
   });
@@ -75,6 +80,7 @@ $(document).ready(function(){
     $("#player2Total").text(" " + player2.total)
     $("#player2RoundScore").text(" " + player2.tempscore)
     player2.winner();
+    $("#playerTurn").text(player1.playerName + "'s Turn!")
   });
 
 });
