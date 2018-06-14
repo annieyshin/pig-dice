@@ -17,7 +17,6 @@ Player.prototype.AIPlay = function() {
     this.roll = rollDice();
     this.checkRoll();
     if (this.tempscore > 20) {
-      console.log("Comp Turn: " + this.tempscore)
       this.hold();
       ;break
     }
