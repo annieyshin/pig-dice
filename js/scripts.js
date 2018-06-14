@@ -16,18 +16,17 @@ function Player(turn) {
 }
 
 Player.prototype.AIPlay = function() {
-  var h = 5
-  for (i = 0; i < 2; i++) {
+  for (i = 0; i < 4; i++) {
     this.roll = rollDice();
     this.checkRoll();
-    if (this.turnscore > 12) {
-      this.hold();
-      ;break
-    } else if (i === 2) {
+    if (this.tempscore > 20) {
+      console.log("Comp Turn: " + this.tempscore)
       this.hold();
       ;break
     }
   }
+  computerPlayer.hold();
+  computerPlayer.winner();
 }
 
 Player.prototype.checkRoll = function() {
@@ -43,7 +42,7 @@ Player.prototype.compCheckRoll = function() {
   if ( this.roll === 1) {
     computerPlayer.AIPlay();
     this.tempscore = 0;
-    $("#playerTurn").text("Next Player's Turn! You rolled a 1.")
+    $("#compVSplayerTurn").text("Next Player's Turn! You rolled a 1.")
   } else {
     this.tempscore += this.roll
   }
@@ -119,6 +118,8 @@ $(document).ready(function(){
     $("#compVSdiceNumber span").text("")
     $("#compVSdiceNumber span").text(compVSplayer1.roll)
     compVSplayer1.compCheckRoll();
+    $("#computerplayer2RoundScore").text(" " + computerPlayer.tempscore)
+    $("#computerPlayer2Total").text(" " + computerPlayer.total)
     $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
   });
 
@@ -131,8 +132,6 @@ $(document).ready(function(){
     computerPlayer.AIPlay();
     console.log(computerPlayer);
     $("#computerplayer2RoundScore").text(" " + computerPlayer.tempscore)
-    computerPlayer.hold();
-    computerPlayer.winner();
     $("#computerPlayer2Total").text(" " + computerPlayer.total)
     $("#compVSplayerTurn").text(compVSplayer1.playerName + "'s Turn!")
   });
