@@ -52,7 +52,22 @@
 }
 
 .btn-warning {
+  margin-bottom: 10px;
   width: 100%;
   font-size: 20pt;
   font-weight: bold;
+}
+
+#ResetBtnID {
+  display: none;
+  text-align: center;
+}
+
+#compResetBtnID {
+  display: none;
+  text-align: center;
+}
+.resetBTNClass, .compresetBTNClass {
+  text-align: center;
+  margin: 20px auto 0 auto;
 }

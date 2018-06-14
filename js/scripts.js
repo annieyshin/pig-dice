@@ -48,6 +48,11 @@ Player.prototype.compCheckRoll = function() {
   }
 }
 
+Player.prototype.resetGame = function() {
+  this.tempscore = 0;
+  this.total = 0;
+}
+
 Player.prototype.hold = function() {
   this.total += this.tempscore
   this.tempscore = 0;
@@ -84,6 +89,7 @@ $(document).ready(function(){
     $("#onePlayerVSCompStartID").hide();
     $("#compVSplayerNamesID").hide();
     $("#compVsgameBoardID").show();
+    $("#compResetBtnID").show();
 
     var compVSplayer1Name = $("#compVSplayerOneID").val();
     $("#compVSplayer1Name").text(compVSplayer1Name + "'s")
@@ -101,6 +107,7 @@ $(document).ready(function(){
    player2 = new Player()
    $("#playerNamesID").hide();
    $("#gameBoardID").show();
+   $("#ResetBtnID").show();
 
    var player1Name = $("#playerOne").val();
    $("#player1Name").text(player1Name + "'s")
@@ -171,5 +178,24 @@ $(document).ready(function(){
     player2.winner();
     $("#playerTurn").text(player1.playerName + "'s Turn!")
   });
+  $("#ResetBtnID").click(function(){
+    player1.resetGame();
+    player2.resetGame();
 
+    $("#playerTurn").empty();
+    $("#player1Total").text(" " + player1.total)
+    $("#player1RoundScore").text(" " + player1.tempscore)
+    $("#player2Total").text(" " + player2.total)
+    $("#player2RoundScore").text(" " + player2.tempscore)
+  });
+
+  $("#compResetBtnID").click(function(){
+    computerPlayer.resetGame();
+    compVSplayer1.resetGame();
+    $("#compVSplayerTurn").empty();
+    $("#compVSplayer1Total").text(" " + compVSplayer1.total)
+    $("#compVSplayer1RoundScore").text(" " + compVSplayer1.tempscore)
+    $("#computerplayer2RoundScore").text(" " + computerPlayer.tempscore)
+    $("#computerPlayer2Total").text(" " + computerPlayer.total)
+  });
 });
